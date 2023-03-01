@@ -7,12 +7,12 @@ printCard('Mia-Theme Vue Plugin by keiko233 & ReallySnow');
 const headerHTMl = `<template>
   <style>
     html {
-      --header-background-color:#ff787eab;
-      --header-text-color:#fff;
-      --header-title-content:"Project Mia";
-      --header-padding:6px;
-      --header-box-shadow:0 4px 5px 0 #ff649c17,0 1px 10px 0 #ff649c17,0 2px 4px -1px #ff649c17;
-      --border-radius:5px
+      --header-background-color: var(--theme-primary);
+      --header-text-color: #fff;
+      --header-title-content: "Project Mia";
+      --header-padding: 6px;
+      --header-box-shadow: var(--theme-primary-shadow);
+      --border-radius: var(--border-radius);
     }
   </style>
 </template>`;
@@ -36,8 +36,8 @@ if (isGerritEnvironment()) {
     </div>
   </div>`;
 
-  const insertStyle = document.createElement('style');
-  insertStyle.innerHTML = `
+  const insertMainHeaderStyle = document.createElement('style');
+  insertMainHeaderStyle.innerHTML = `
   .loginButton {
     background-color:#ff787eab;
     border-radius:var(--border-radius);
@@ -49,5 +49,5 @@ if (isGerritEnvironment()) {
   .accountContainer {
     overflow: initial !important;
   }`;
-  gerritMainHeader?.appendChild(insertStyle);
+  gerritMainHeader?.appendChild(insertMainHeaderStyle);
 }
