@@ -30,7 +30,7 @@
 <script setup lang="ts">
 import { removeStyleById } from '../../../ts/StyleInsert'
 import { putLS } from '../../../ts/LocalStorage'
-import { enableCustomStyle, customColorValue, setCustomColor } from './script'
+import { enableCustomStyle, customColorValue, setCustomColor } from './ColorEditScript'
 
 const switchCustomStyle = (value: boolean) => {
   putLS('enableCustomStyle', value);

@@ -9,6 +9,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ColorEdit: typeof import('./src/components/vue/template/ColorEdit/ColorEdit.vue')['default']
     Home: typeof import('./src/components/vue/template/Home.vue')['default']
     Index: typeof import('./src/components/vue/template/ColorEdit/Index.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
@@ -21,6 +22,7 @@ declare module '@vue/runtime-core' {
     NTabs: typeof import('naive-ui')['NTabs']
     NTooltip: typeof import('naive-ui')['NTooltip']
     Optimizations: typeof import('./src/components/vue/template/Optimizations/Optimizations.vue')['default']
+    Settings: typeof import('./src/components/vue/template/Settings/Settings.vue')['default']
     ToolsView: typeof import('./src/components/vue/ToolsView.vue')['default']
   }
 }
