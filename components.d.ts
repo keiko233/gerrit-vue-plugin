@@ -10,7 +10,11 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     NButton: typeof import('naive-ui')['NButton']
-    NSpace: typeof import('naive-ui')['NSpace']
+    NCard: typeof import('naive-ui')['NCard']
+    NModal: typeof import('naive-ui')['NModal']
+    NTabPane: typeof import('naive-ui')['NTabPane']
+    NTabs: typeof import('naive-ui')['NTabs']
+    NTooltip: typeof import('naive-ui')['NTooltip']
     ToolsView: typeof import('./src/components/vue/ToolsView.vue')['default']
   }
 }

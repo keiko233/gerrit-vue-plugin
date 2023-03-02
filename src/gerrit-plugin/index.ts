@@ -1,6 +1,8 @@
 import { injectionRegister } from '../components/js/Injection'
 import { printCard } from '../components/ts/ConsoleMethod'
 import { isGerritEnvironment, getGerritMainHeader } from '../components/ts/GerritMethod'
+import { createApp, h } from 'vue'
+import ToolsView from '../components/vue/ToolsView.vue'
 
 printCard('Mia-Theme Vue Plugin by keiko233 & ReallySnow');
 
@@ -50,4 +52,9 @@ if (isGerritEnvironment()) {
     overflow: initial !important;
   }`;
   gerritMainHeader?.appendChild(insertMainHeaderStyle);
+}
+
+if (isGerritEnvironment()) {
+  const vueLoader = document.body.appendChild(document.createElement('div'));
+  createApp(h(ToolsView)).mount(vueLoader);
 }
