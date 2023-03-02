@@ -9,7 +9,7 @@
         :actions="['confirm']" @confirm="updateCustomColor" />
 
       <div class="config-color-card">
-        <p>色彩列表</p>
+        <p>Color preview</p>
         <div class="config-color-perview" style="background-color: var(--theme-primary);">
           theme-primary
         </div>
