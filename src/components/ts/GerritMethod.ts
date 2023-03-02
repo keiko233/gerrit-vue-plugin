@@ -9,11 +9,15 @@ export function isGerritEnvironment() {
 }
 
 export function getGerritMainHeader() {
-  const mainHeader = document.getElementById("pg-app")!.shadowRoot!.getElementById("app-element")!.shadowRoot!.getElementById("mainHeader")!.shadowRoot;
-  return mainHeader;
+  if (isGerritEnvironment()) {
+    const mainHeader = document.getElementById("pg-app")!.shadowRoot!.getElementById("app-element")!.shadowRoot!.getElementById("mainHeader")!.shadowRoot;
+    return mainHeader;
+  }
 }
 
 export function getGerritAppElement() {
-  const appElement = document.getElementById("pg-app")!.shadowRoot!.getElementById("app-element")!.shadowRoot;
-  return appElement;
+  if (isGerritEnvironment()) {
+    const appElement = document.getElementById("pg-app")!.shadowRoot!.getElementById("app-element")!.shadowRoot;
+    return appElement;
+  }
 }
