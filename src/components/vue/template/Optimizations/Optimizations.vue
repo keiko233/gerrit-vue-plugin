@@ -1,6 +1,6 @@
 <template>
   <div class="config-card">
-    <h3>移动端布局优化</h3>
+    <h3>布局优化</h3>
     <p>我不保证开启后会比原版好多少，但起码不会比原版恶心操作。</p>
 
     <div class="list-card">
