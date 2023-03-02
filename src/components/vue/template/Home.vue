@@ -43,15 +43,3 @@ const openUrl = (url: string) => {
   window.open(url, '_blank');
 }
 </script>
-
-<style lang="less" scoped>
-.config-card {
-  p {
-    padding: 0 0 4px 0;
-  }
-
-  .list-card {
-    padding: 16px 0;
-  }
-}
-</style>
