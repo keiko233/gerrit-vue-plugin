@@ -41,7 +41,6 @@ const showModal = ref(true);
 
 const click = () => {
   showModal.value = !showModal.value;
-  console.log(showModal.value);
 }
 
 onMounted(() => {
