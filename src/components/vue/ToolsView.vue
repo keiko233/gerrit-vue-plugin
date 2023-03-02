@@ -68,6 +68,6 @@ onMounted(() => {
   right: 0;
   top: 10vh;
   width: 480px;
-  border-radius: var(--border-radius);
+  border-radius: var(--theme-border-radius);
 }
 </style>

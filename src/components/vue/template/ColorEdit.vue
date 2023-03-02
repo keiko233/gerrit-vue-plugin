@@ -85,7 +85,7 @@ onMounted(() => {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
-    border-radius: var(--border-radius);
+    border-radius: var(--theme-border-radius);
     background-color: var(--background-overlay);
   }
 }

@@ -17,7 +17,7 @@ if (isGerritEnvironment()) {
         --header-title-content: "Project Mia";
         --header-padding: 6px;
         --header-box-shadow: var(--theme-primary-shadow);
-        --border-radius: var(--border-radius);
+        --border-radius: 6px;
       }
     </style>
   </template>`;
@@ -39,7 +39,7 @@ if (isGerritEnvironment()) {
   insertMainHeaderStyle.innerHTML = `
   .loginButton {
     background-color:#ff787eab;
-    border-radius:var(--border-radius);
+    border-radius:var(--theme-border-radius);
     text-decoration:none;
     color:white!important;
     border:1px solid #ffffffff;
