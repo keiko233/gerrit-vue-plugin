@@ -3,13 +3,13 @@
     <n-modal v-model:show="showModal">
       <n-card content-style="padding: 0;" class="overlay-card">
         <n-tabs type="line" size="large" :tabs-padding="20" animated pane-style="padding: 0;">
-          <n-tab-pane name="Template">
+          <n-tab-pane name="Home Page">
             <Home />
           </n-tab-pane>
           <n-tab-pane name="Color Editor">
             <ColorEdit />
           </n-tab-pane>
-          <n-tab-pane name="Settings">
+          <n-tab-pane name="Plugin Settings">
             <Settings />
           </n-tab-pane>
         </n-tabs>
@@ -37,8 +37,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { getLS, initLS } from '../ts/LocalStorage'
-import ColorEdit from './template/ColoeEdit/Index.vue'
-import { enableCustomStyle, customColorValue, setCustomColor } from './template/ColoeEdit/script'
+import ColorEdit from './template/ColorEdit/Index.vue'
+import { enableCustomStyle, customColorValue, setCustomColor } from './template/ColorEdit/script'
 import Home from './template/Home.vue'
 import Settings from './template/Settings/Index.vue'
 
