@@ -26,9 +26,12 @@ if (isGerritEnvironment()) {
   const gerritMainHeader = getGerritMainHeader();
   gerritMainHeader!.querySelector("gr-endpoint-decorator")!.innerHTML = `
   <div style="min-width:120px;font-family:var(--font-family,&quot;&quot;),&quot;Roboto&quot;,Arial,sans-serif;font-weight:400;line-height:20px;"></div>
-    <div style="font-size:20px">
-      <div style="font-size:.8em;">Project Mia</div>
-      <div>Code Review</div>
+    <div style="font-size:20px;display: flex;align-items: center;">
+      <img src="https://project-mia.org/mia.png" style="height: 48px;margin-right: 6px;border-radius: 10px;">
+      <div>
+        <div style="font-size:.8em;">Project Mia</div>
+        <div>Code Review</div>
+      </div>
     </div>
   </div>`;
 
