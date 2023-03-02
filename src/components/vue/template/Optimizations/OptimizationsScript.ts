@@ -28,6 +28,7 @@ nav ul.links.show {
 
 nav ul.links li {
   width: 100%;
+  padding: 6px 0;
 }
 
 div#close-sidebar-links {
