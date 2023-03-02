@@ -70,7 +70,12 @@ export function insertSidebarLinksStyle() {
     insertElementStyleById('sidebar-links', gerritMainHeader, style);
 
     insertElementById('menu-button', nav, menuButton).onclick = () => {
-      ulLinks!.classList.add('show');
+      const navUlClassList = gerritMainHeader!.querySelector("nav > ul")!.classList;
+      if (!navUlClassList.contains('show')) {
+        navUlClassList.add('show');
+      } else {
+        navUlClassList.remove('show');
+      }
     }
 
     insertElementById('close-sidebar-links', ulLinks, 'Close').onclick = () => {
