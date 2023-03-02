@@ -6,7 +6,21 @@ import { ref } from 'vue'
 
 export const enableThemeSidebarLinks = ref(initLS('enableThemeSidebarLinks', false));
 
-const style = `nav ul.links  {
+const style = `nav a.bigTitle {
+  display: flex;
+  align-items: center;
+}
+
+nav a.bigTitle div#menu-button {
+  height: 38px;
+  width: 38px;
+  margin-left: 12px;
+  background-color: var(--background-overlay);
+  border-radius: var(--border-radius);
+  padding: 4px;
+}
+
+nav ul.links  {
   position: absolute;
   background-color: var(--theme-primary-notransparency);
   top: 0;
@@ -41,6 +55,10 @@ div#close-sidebar-links {
   font-weight: 700;
 }`;
 
+const menuButton = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill: var(--header-text-color);">
+  <path d="M21,15.61L19.59,17L14.58,12L19.59,7L21,8.39L17.44,12L21,15.61M3,6H16V8H3V6M3,13V11H13V13H3M3,18V16H16V18H3Z" />
+</svg>`;
+
 export function insertSidebarLinksStyle() {
   if (isGerritEnvironment()) {
     const gerritMainHeader = getGerritMainHeader();
@@ -50,9 +68,9 @@ export function insertSidebarLinksStyle() {
     console.log('Is Gerrit environment, inject sidebar-links.');
     insertElementStyleById('sidebar-links', gerritMainHeader, style);
 
-    bigTitle!.addEventListener('click', () => {
+    insertElementById('menu-button', bigTitle, menuButton).onclick = () => {
       ulLinks!.classList.add('show');
-    })
+    }
 
     insertElementById('close-sidebar-links', ulLinks, 'Close').onclick = () => {
       ulLinks!.classList.remove('show');
