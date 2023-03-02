@@ -2,9 +2,9 @@
   <div class="tools-overlay">
     <n-modal v-model:show="showModal">
       <n-card content-style="padding: 0;" class="overlay-card">
-        <n-tabs type="line" size="large" :tabs-padding="20" pane-style="padding: 20px;">
-          <n-tab-pane name="PARKLIFE">
-            PARKLIFE
+        <n-tabs type="line" size="large" :tabs-padding="20" pane-style="padding: 0;">
+          <n-tab-pane name="Color Edit">
+            <ColorEdit />
           </n-tab-pane>
           <n-tab-pane name="ROCKLIFE">
             ROCKLIFE
@@ -32,6 +32,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import ColorEdit from './template/ColorEdit.vue'
 
 const showModal = ref(false);
 
@@ -56,6 +57,6 @@ const click = () => {
 }
 
 .overlay-card {
-  width: 600px;
+  width: 480px;
 }
 </style>
