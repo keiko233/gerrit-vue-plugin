@@ -28,23 +28,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { insertStyleById, removeStyleById } from '../../ts/StyleInsert'
-import { initLS, putLS } from '../../ts/LocalStorage'
-import { getDarkColor, getLightColor } from '../../ts/ColorMapping'
-
-const enableCustomStyle = ref(initLS('enableCustomStyle', false));
-const customColorValue = ref(initLS('customColorValue', '#FF1958'));
-
-const setCustomColor = (value: string) => {
-  const style = `:root {
-    --theme-primary: ${value}A3;
-    --theme-primary-notransparency: ${getLightColor(value, 0.2)};
-    --theme-primary-shadow: 0 0 3px ${getDarkColor(getLightColor(value, 0.8), 0.2)};
-    --theme-primary-font-shadow: 0 0 1px ${getDarkColor(getLightColor(value, 0.1), 0.1)};
-  }`;
-  insertStyleById('custom-color', style);
-}
+import { removeStyleById } from '../../../ts/StyleInsert'
+import { putLS } from '../../../ts/LocalStorage'
+import { enableCustomStyle, customColorValue, setCustomColor } from './script'
 
 const switchCustomStyle = (value: boolean) => {
   putLS('enableCustomStyle', value);
@@ -62,12 +48,6 @@ const updateCustomColor = (value: string) => {
     setCustomColor(value);
   }
 }
-
-onMounted(() => {
-  if (enableCustomStyle.value == true) {
-    setCustomColor(customColorValue.value);
-  }
-})
 </script>
 
 <style lang="less" scoped>

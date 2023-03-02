@@ -33,7 +33,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import ColorEdit from './template/ColorEdit.vue'
+import ColorEdit from './template/ColoeEdit/Index.vue'
+import { enableCustomStyle, customColorValue, setCustomColor } from './template/ColoeEdit/script'
 import Home from './template/Home.vue'
 
 const showModal = ref(true);
@@ -45,6 +46,9 @@ const click = () => {
 
 onMounted(() => {
   showModal.value = false;
+  if (enableCustomStyle.value == true) {
+    setCustomColor(customColorValue.value);
+  }
 })
 </script>
 
