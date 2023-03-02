@@ -71,10 +71,6 @@ onMounted(() => {
 </script>
 
 <style lang="less" scoped>
-.config-card {
-  padding: 16px;
-}
-
 .config-color-card {
   display: flex;
   flex-wrap: wrap;
