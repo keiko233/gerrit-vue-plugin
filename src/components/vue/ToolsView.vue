@@ -37,14 +37,13 @@ import ColorEdit from './template/ColoeEdit/Index.vue'
 import { enableCustomStyle, customColorValue, setCustomColor } from './template/ColoeEdit/script'
 import Home from './template/Home.vue'
 
-const showModal = ref(true);
+const showModal = ref(false);
 
 const click = () => {
   showModal.value = !showModal.value;
 }
 
 onMounted(() => {
-  showModal.value = false;
   if (enableCustomStyle.value == true) {
     setCustomColor(customColorValue.value);
   }
