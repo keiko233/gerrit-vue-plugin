@@ -14,7 +14,7 @@ const style = `nav ul.links  {
   height: 100vh;
   max-width: 0;
   z-index: 10;
-  padding: 10px;
+  padding: 0;
   transition: all 0.3s;
   opacity: 0;
   visibility: hidden;
@@ -22,6 +22,7 @@ const style = `nav ul.links  {
 
 nav ul.links.show {
   opacity: 1 !important;
+  padding: 10px;
   max-width: 180px !important;
   visibility: visible;
 }
