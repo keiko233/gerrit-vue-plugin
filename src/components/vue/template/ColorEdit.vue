@@ -1,18 +1,20 @@
 <template>
   <div class="config-card">
-    <n-space justify="space-between" align="center">
-      <p>Enable Custom Style</p>
-      <n-switch v-model:value="enableCustomStyle" @update:value="switchCustomStyle" />
+    <n-space vertical>
+      <n-space justify="space-between" align="center">
+        <p>Enable Custom Style</p>
+        <n-switch v-model:value="enableCustomStyle" @update:value="switchCustomStyle" />
+      </n-space>
+      <n-color-picker placement="top-start" v-model:value="customColorValue" :modes="['hex']" :show-alpha="false"
+        :actions="['confirm']" @confirm="updateCustomColor" />
     </n-space>
-    <n-color-picker placement="top-start" v-model:value="customColorValue" :modes="['hex']" :show-alpha="false"
-      :actions="['confirm']" @confirm="updateCustomColor" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { insertStyleById, removeStyleById } from '../../ts/StyleInsert'
-import { initLS, putLS } from '../../ts/LocalStorage'
+import { initLS, putLS, getLS } from '../../ts/LocalStorage'
 import { getDarkColor, getLightColor } from '../../ts/ColorMapping'
 
 const enableCustomStyle = ref(initLS('enableCustomStyle', false));
@@ -38,10 +40,18 @@ const switchCustomStyle = (value: boolean) => {
 }
 
 const updateCustomColor = (value: string) => {
-  putLS('customColorValue', value);
-  removeStyleById('custom-color');
-  setCustomColor(value);
+  if (enableCustomStyle.value) {
+    putLS('customColorValue', value);
+    removeStyleById('custom-color');
+    setCustomColor(value);
+  }
 }
+
+onMounted(() => {
+  if (enableCustomStyle.value == true) {
+    setCustomColor(customColorValue.value);
+  }
+})
 </script>
 
 <style lang="less" scoped>
