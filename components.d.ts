@@ -10,7 +10,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Home: typeof import('./src/components/vue/template/Home.vue')['default']
-    Index: typeof import('./src/components/vue/template/ColoeEdit/Index.vue')['default']
+    Index: typeof import('./src/components/vue/template/ColorEdit/Index.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NCard: typeof import('naive-ui')['NCard']
     NColorPicker: typeof import('naive-ui')['NColorPicker']
@@ -20,6 +20,7 @@ declare module '@vue/runtime-core' {
     NTabPane: typeof import('naive-ui')['NTabPane']
     NTabs: typeof import('naive-ui')['NTabs']
     NTooltip: typeof import('naive-ui')['NTooltip']
+    Optimizations: typeof import('./src/components/vue/template/Optimizations/Optimizations.vue')['default']
     ToolsView: typeof import('./src/components/vue/ToolsView.vue')['default']
   }
 }

@@ -6,6 +6,9 @@
           <n-tab-pane name="Home Page">
             <Home />
           </n-tab-pane>
+          <n-tab-pane name="Optimizations">
+            <Optimizations />
+          </n-tab-pane>
           <n-tab-pane name="Color Editor">
             <ColorEdit />
           </n-tab-pane>
@@ -36,7 +39,9 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { getLS, initLS } from '../ts/LocalStorage'
+import { initLS } from '../ts/LocalStorage'
+import Optimizations from './template/Optimizations/Optimizations.vue'
+import { enableThemeSidebarLinks, insertSidebarLinksStyle } from './template/Optimizations/OptimizationsScript'
 import ColorEdit from './template/ColorEdit/Index.vue'
 import { enableCustomStyle, customColorValue, setCustomColor } from './template/ColorEdit/script'
 import Home from './template/Home.vue'
@@ -52,6 +57,9 @@ const click = () => {
 onMounted(() => {
   if (enableCustomStyle.value == true) {
     setCustomColor(customColorValue.value);
+  }
+  if (enableThemeSidebarLinks.value == true) {
+    insertSidebarLinksStyle();
   }
 })
 </script>
