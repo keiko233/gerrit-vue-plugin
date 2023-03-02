@@ -25,7 +25,7 @@
           </template>
         </n-button>
       </template>
-      Click to open menu.
+      Click to show menu.
     </n-tooltip>
 
   </div>
