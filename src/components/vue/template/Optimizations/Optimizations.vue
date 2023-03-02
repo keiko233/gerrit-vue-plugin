@@ -5,7 +5,10 @@
 
     <div class="list-card">
       <h3>顶部导航栏 links 改为侧边栏</h3>
-      <p>不一定好用，但是肯定看上去舒服些。关闭后将会自动刷新网页。</p>
+      <p>
+        不一定好用，但是肯定看上去舒服些。开启后点击顶部Logo即可打开侧边栏。<br>
+        关闭后将会自动刷新网页。
+      </p>
       <n-switch v-model:value="enableThemeSidebarLinks" @update:value="enableThemeSidebarLinksButton" />
     </div>
   </div>

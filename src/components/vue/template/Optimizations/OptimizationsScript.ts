@@ -26,6 +26,10 @@ nav ul.links.show {
   visibility: visible;
 }
 
+nav ul.links li {
+  width: 100%;
+}
+
 div#close-sidebar-links {
   padding: 8px 6px;
   margin: 4px;
