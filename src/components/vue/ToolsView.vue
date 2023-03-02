@@ -6,8 +6,8 @@
           <n-tab-pane name="Color Edit">
             <ColorEdit />
           </n-tab-pane>
-          <n-tab-pane name="ROCKLIFE">
-            ROCKLIFE
+          <n-tab-pane name="Template">
+            Template
           </n-tab-pane>
         </n-tabs>
       </n-card>
@@ -31,15 +31,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import ColorEdit from './template/ColorEdit.vue'
 
-const showModal = ref(false);
+const showModal = ref(true);
 
 const click = () => {
   showModal.value = !showModal.value;
   console.log(showModal.value);
 }
+
+onMounted(() => {
+  showModal.value = false;
+})
 </script>
 
 <style lang="less" scoped>
