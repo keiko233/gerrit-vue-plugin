@@ -1,7 +1,5 @@
 export function insertStyleById(id: string, style: string) {
-  const originalElement = document.getElementById(id);
-  if (originalElement) document.head.removeChild(originalElement);
-
+  removeStyleById(id);
   const insertStyle = document.createElement('style');
   insertStyle.id = id;
   insertStyle.innerHTML = style;
@@ -10,5 +8,5 @@ export function insertStyleById(id: string, style: string) {
 
 export function removeStyleById(id: string) {
   const removeElement = document.getElementById(id);
-  if (removeElement != null) document.removeChild(removeElement);
+  if (removeElement != null) document.head.removeChild(removeElement);
 }
