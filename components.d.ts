@@ -10,9 +10,11 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ColorEdit: typeof import('./src/components/vue/template/ColorEdit.vue')['default']
+    Home: typeof import('./src/components/vue/template/Home.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NCard: typeof import('naive-ui')['NCard']
     NColorPicker: typeof import('naive-ui')['NColorPicker']
+    NIcon: typeof import('naive-ui')['NIcon']
     NModal: typeof import('naive-ui')['NModal']
     NSpace: typeof import('naive-ui')['NSpace']
     NSwitch: typeof import('naive-ui')['NSwitch']

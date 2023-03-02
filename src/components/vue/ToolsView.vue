@@ -3,11 +3,11 @@
     <n-modal v-model:show="showModal">
       <n-card content-style="padding: 0;" class="overlay-card">
         <n-tabs type="line" size="large" :tabs-padding="20" pane-style="padding: 0;">
+          <n-tab-pane name="Template">
+            <Home />
+          </n-tab-pane>
           <n-tab-pane name="Color Editor">
             <ColorEdit />
-          </n-tab-pane>
-          <n-tab-pane name="Template">
-            Template
           </n-tab-pane>
         </n-tabs>
       </n-card>
@@ -34,6 +34,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import ColorEdit from './template/ColorEdit.vue'
+import Home from './template/Home.vue'
 
 const showModal = ref(true);
 
@@ -62,6 +63,11 @@ onMounted(() => {
 }
 
 .overlay-card {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 10vh;
   width: 480px;
+  border-radius: var(--border-radius);
 }
 </style>
