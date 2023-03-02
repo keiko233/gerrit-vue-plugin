@@ -2,7 +2,7 @@
   <div class="tools-overlay">
     <n-modal v-model:show="showModal">
       <n-card content-style="padding: 0;" class="overlay-card">
-        <n-tabs type="line" size="large" :tabs-padding="20" pane-style="padding: 0;">
+        <n-tabs type="line" size="large" :tabs-padding="20" animated pane-style="padding: 0;">
           <n-tab-pane name="Template">
             <Home />
           </n-tab-pane>
