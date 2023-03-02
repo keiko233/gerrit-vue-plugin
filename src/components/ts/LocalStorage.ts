@@ -1,4 +1,4 @@
-export function putLS (variablName: string, value: string){
+export function putLS (variablName: string, value: any){
   localStorage.setItem(variablName, JSON.stringify(value));
   return getLS(variablName);
 }
@@ -12,7 +12,7 @@ export function delLS (variablName: string) {
   return localStorage.removeItem(variablName);
 }
 
-export function initLS (variablName: string, defaultValue: string) {
+export function initLS (variablName: string, defaultValue: any) {
   if (!getLS(variablName)) {
     putLS (variablName, defaultValue);
     return defaultValue;
