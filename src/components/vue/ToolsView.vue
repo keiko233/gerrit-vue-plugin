@@ -15,11 +15,12 @@
 
     <n-tooltip trigger="hover">
       <template #trigger>
-        <n-button tertiary circle color="#ff1958" @click="click">
+        <n-button size="large" tertiary circle @click="click">
           <template #icon>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <title>tooltip</title>
-              <path d="M4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H16L12,22L8,18H4A2,2 0 0,1 2,16V4A2,2 0 0,1 4,2Z" />
+              <path style="fill: var(--theme-primary-notransparency)"
+                d="M4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H16L12,22L8,18H4A2,2 0 0,1 2,16V4A2,2 0 0,1 4,2Z" />
             </svg>
           </template>
         </n-button>
@@ -49,7 +50,8 @@ onMounted(() => {
 <style lang="less" scoped>
 .tools-overlay {
   position: absolute;
-  top: 0;
+  right: 0;
+  bottom: 0;
   height: 128px;
   width: 128px;
   z-index: 99;
@@ -57,7 +59,6 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: calc(92% - 129px) calc(100% - 128px);
 }
 
 .overlay-card {
