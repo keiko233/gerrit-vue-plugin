@@ -11,12 +11,13 @@ const style = `nav a.bigTitle {
   align-items: center;
 }
 
-nav a.bigTitle div#menu-button {
-  height: 38px;
-  width: 38px;
-  margin-left: 12px;
+nav div#menu-button {
+  height: 42px;
+  width: 42px;
+  position: absolute;
+  left: 184px;
   background-color: var(--background-overlay);
-  border-radius: var(--border-radius);
+  border-radius: 50%;
   padding: 4px;
 }
 
@@ -63,12 +64,12 @@ export function insertSidebarLinksStyle() {
   if (isGerritEnvironment()) {
     const gerritMainHeader = getGerritMainHeader();
     const ulLinks = gerritMainHeader!.querySelector("nav > ul");
-    const bigTitle = gerritMainHeader!.querySelector("nav > a");
+    const nav = gerritMainHeader!.querySelector("nav");
 
     console.log('Is Gerrit environment, inject sidebar-links.');
     insertElementStyleById('sidebar-links', gerritMainHeader, style);
 
-    insertElementById('menu-button', bigTitle, menuButton).onclick = () => {
+    insertElementById('menu-button', nav, menuButton).onclick = () => {
       ulLinks!.classList.add('show');
     }
 
