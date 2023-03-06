@@ -66,7 +66,7 @@ onMounted(() => {
 
 <style lang="less" scoped>
 .tools-overlay {
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   height: 128px;
