@@ -12,11 +12,6 @@
       <n-switch v-model:value="enableThemeSidebarLinks" @update:value="enableThemeSidebarLinksButton" />
     </div>
 
-    <div class="list-card">
-      <h3>设置页优化</h3>
-      <p>肯定好用，增加边框等元素，同时优化移动端排版。</p>
-      <n-switch v-model:value="enableThemeSettings" @update:value="enableThemeSettingsButton" />
-    </div>
   </div>
 </template>
 
@@ -24,24 +19,13 @@
 import { putLS } from '../../../ts/LocalStorage'
 import { 
   enableThemeSidebarLinks, 
-  insertSidebarLinksStyle, 
-  enableThemeSettings,
-  insertSettingsStyle
+  insertSidebarLinksStyle
 } from './OptimizationsScript'
 
 const enableThemeSidebarLinksButton = (value: boolean) => {
   putLS('enableThemeSidebarLinks', value);
   if (value) {
     insertSidebarLinksStyle();
-  } else {
-    location.reload();
-  }
-}
-
-const enableThemeSettingsButton = (value: boolean) => {
-  putLS('enableThemeSettings', value);
-  if (value) {
-    insertSettingsStyle();
   } else {
     location.reload();
   }
