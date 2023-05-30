@@ -9,19 +9,15 @@ printCard('Mia-Theme Vue Plugin by keiko233 & ReallySnow');
 if (isGerritEnvironment()) {
   console.log('Is Gerrit environment, inject Register.');
 
-  const headerHTMl = `<template>
-    <style>
-      html {
-        --header-background-color: var(--theme-primary);
-        --header-text-color: #fff;
-        --header-title-content: "Project Mia";
-        --header-padding: 6px;
-        --header-box-shadow: var(--theme-primary-shadow);
-        --border-radius: 6px;
-      }
-    </style>
-  </template>`;
-  injectionRegister(headerHTMl);
+  const style = `html {
+    --header-background-color: var(--theme-primary);
+    --header-text-color: #fff;
+    --header-title-content: "Project Mia";
+    --header-padding: 6px;
+    --header-box-shadow: var(--theme-primary-shadow);
+    --border-radius: 6px;
+  }`;
+  injectionRegister(style);
 
   const gerritMainHeader = getGerritMainHeader();
   gerritMainHeader!.querySelector("gr-endpoint-decorator")!.innerHTML = `
